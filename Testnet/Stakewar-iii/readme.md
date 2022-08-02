@@ -1,4 +1,6 @@
+---
 **Tutorial Full Setup Stake Wars: Episode III A New Validator**
+---
 
 ![alt text](https://user-images.githubusercontent.com/35837931/180386866-d7d109a2-bf61-4ebf-ae8e-26f64604a094.png)
 
