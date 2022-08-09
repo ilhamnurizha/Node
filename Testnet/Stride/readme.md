@@ -218,7 +218,7 @@ source $HOME/.bash_profile
 
 ### Fund your wallet
 In order to create validator first you need to fund your wallet with testnet tokens.
-To top up your wallet join [Stride discord server](https://discord.gg/n6KrK77t) and navigate to:
+To top up your wallet join [Stride discord server](https://discord.gg/DkqBKq5V) and navigate to:
 - **#token-faucet** to request test tokens
 
 To request a faucet grant:
