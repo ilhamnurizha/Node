@@ -6,11 +6,6 @@ Official documentation:
 Explorer:
 >-  https://stride.explorers.guru
 
-## Usefull tools and references
-> To set up monitoring for your validator node navigate to [Set up monitoring and alerting for stride validator](https://github.com/kj89/testnet_manuals/blob/main/stride/monitoring/README.md)
->
-> To migrate your validator to another machine read [Migrate your validator to another machine](https://github.com/kj89/testnet_manuals/blob/main/stride/migrate_validator.md)
-
 ## Hardware Requirements
 Like any Cosmos-SDK chain, the hardware requirements are pretty modest.
 
@@ -303,16 +298,6 @@ sudo ufw allow ssh/tcp
 sudo ufw limit ssh/tcp
 sudo ufw allow ${STRIDE_PORT}656,${STRIDE_PORT}660/tcp
 sudo ufw enable
-```
-
-## Monitoring
-To monitor and get alerted about your validator health status you can use my guide on [Set up monitoring and alerting for stride validator](https://github.com/kj89/testnet_manuals/blob/main/stride/monitoring/README.md)
-
-## Calculate synchronization time
-This script will help you to estimate how much time it will take to fully synchronize your node\
-It measures average blocks per minute that are being synchronized for period of 5 minutes and then gives you results
-```
-wget -O synctime.py https://raw.githubusercontent.com/kj89/testnet_manuals/main/stride/tools/synctime.py && python3 ./synctime.py
 ```
 
 ### Check your validator key
