@@ -260,21 +260,20 @@ strided tx stakeibc liquid-stake 1000 uatom --from $WALLET --chain-id $STRIDE_CH
 ### Redeem stake
 After accruing some staking rewards, you can unstake your tokens. Currently, the unbonding period on our Gaia (Cosmos Hub) testnet is around 30 minutes.
 ```
-strided tx stakeibc redeem-stake 1000 GAIA <COSMOS_ADDRESS_YOU_WANT_TO_REDEEM_TO> --chain-id $STRIDE_CHAIN_ID --from $WALLET
+strided tx stakeibc redeem-stake 1500 GAIA <cosmos_address> --chain-id $STRIDE_CHAIN_ID --from $WALLET
 ```
 
 ### Check if tokens are claimable
 If you'd like to see whether your tokens are ready to be claimed, look for your `UserRedemptionRecord` keyed by `<your_stride_account>`. 
 ```
-strided q records list-user-redemption-record --limit 10000 --output json | jq --arg WALLET_ADDRESS "$STRIDE_WALLET_ADDRESS" '.UserRedemptionRecord | map(select(.sender == $WALLET_ADDRESS))'
+strided q records list-user-redemption-record --limit 10000 --output json | jq  '.UserRedemptionRecord | map(select(.sender == "stride_address"))'
 ```
 If your record has the attribute `isClaimable=true`, they're ready to be claimed!
 
 ### Claim tokens
 After your tokens have unbonded, they can be claimed by triggering the claim process. 
 ```
-wget -qO claim.sh https://raw.githubusercontent.com/kj89/testnet_manuals/main/stride/tools/claim.sh && chmod +x claim.sh
-./claim.sh $STRIDE_WALLET_ADDRESS
+strided tx stakeibc claim-undelegated-tokens GAIA "epochNumber" "sender" --chain-id STRIDE-TESTNET-2 --from wallet -y
 ```
 > Note: this function triggers claims in a FIFO queue, meaning if your claim is 20th in line, you'll have process other claims before seeing your tokens appear in your account.
 
