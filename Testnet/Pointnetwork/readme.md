@@ -12,8 +12,9 @@ Minimum Hardware Requirement based on https://docs.evmos.org/validators/overview
 | Hardware |	Chunk-Only Producer Specification |
 | -------- | ---------------------------------- |
 | CPU      | 4-Core CPU with AVX support        |
-| RAM      |	8GB DDR4                          |
-| Storage	 |  500GB SSD                         |
+| RAM      | 8GB DDR4                          |
+| Storage	 | 500GB SSD                         |
+| OS       | Linux Ubuntu 22.04                 |
 
 Official Docs: https://github.com/pointnetwork/point-chain/blob/xnet-triton/VALIDATORS.md#prerequisites
 
