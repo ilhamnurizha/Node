@@ -2,7 +2,7 @@
   <img height="150" height="auto" src="https://user-images.githubusercontent.com/38981255/185550018-bf5220fa-7858-4353-905c-9bbd5b256c30.jpg">
 </p>
 
-# #Point Network Testnet Incentivized
+# Point Network Node Validator Testnet Incentivized
 
 
 ## Prerequisites
