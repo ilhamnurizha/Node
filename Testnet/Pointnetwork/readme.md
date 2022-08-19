@@ -2,12 +2,12 @@
   <img height="150" height="auto" src="https://user-images.githubusercontent.com/38981255/185550018-bf5220fa-7858-4353-905c-9bbd5b256c30.jpg">
 </p>
 
-# Point Network Node Validator Testnet Incentivized
+# [PointNetwork](https://pointnetwork.io/) Node Validator Testnet Incentivized
 
 
 ## Prerequisites
 
-Minimum Hardware Requirement based on https://docs.evmos.org/validators/overview.html#hardware
+Minimum Hardware Requirement based on [Evmos](https://docs.evmos.org/validators/overview.html#hardware)
 
 | Hardware |	Chunk-Only Producer Specification |
 | -------- | ---------------------------------- |
@@ -16,7 +16,8 @@ Minimum Hardware Requirement based on https://docs.evmos.org/validators/overview
 | Storage	 | 500GB SSD                         |
 | OS       | Linux Ubuntu 22.04                 |
 
-Official Docs: https://github.com/pointnetwork/point-chain/blob/xnet-triton/VALIDATORS.md#prerequisites
+Official Docs: [Github](https://github.com/pointnetwork/point-chain/blob/xnet-triton/VALIDATORS.md#prerequisites) </br>
+Official Contact: [Discord](https://discord.gg/eQwTgNdV) [Twitter](https://twitter.com/PointNetwork) [Telegram](https://t.me/pointnetworkchat) 
 
 ## Setting up vars
 ```
