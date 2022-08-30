@@ -119,8 +119,8 @@ EOF
 
 ```
 sudo systemctl daemon-reload
-sudo systemctl enable evmosd
-sudo systemctl restart evmosd
+sudo systemctl enable haqqd
+sudo systemctl restart haqqd
 ```
 ## Reload Variable
 
