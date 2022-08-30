@@ -27,6 +27,10 @@ moniker_name filled with your Name
 
 ```
 echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
+if [ ! $WALLET ]; then
+echo "export WALLET=wallet" >> $HOME/.bash_profile
+fi
+echo "export NODENAME=$NODENAME" >> $HOME/.bash_profile
 echo "export HAQQ_CHAIN_ID=haqq_53211-1" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
