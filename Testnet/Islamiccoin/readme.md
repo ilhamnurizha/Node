@@ -139,7 +139,7 @@ Wait until "catching_up": false
 ## Check your log
 
 ```
-&& sudo journalctl -u haqqd -f -o cat
+sudo journalctl -u haqqd -f -o cat
 ```
 
 ## Create your Funded Wallet Address
