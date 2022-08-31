@@ -219,3 +219,20 @@ haqqd tx staking create-validator \
   --node https://rpc.tm.testedge.haqq.network:443
   --keyring-backend file
 ```
+
+## Self Delegated or to Other Validator
+```
+haqqd tx staking delegate YOUR_VALOPER_ADDRESS 10000000aISLM --from=$WALLET --chain-id $HAQQ_CHAIN_ID --gas-prices=0.025aISLM
+```
+
+## Check Active Validator
+
+```
+haqqd query tendermint-validator-set | grep "$(haqqd tendermint show-address)"
+```
+
+## Check Active Validator
+
+```
+haqqd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
+```
