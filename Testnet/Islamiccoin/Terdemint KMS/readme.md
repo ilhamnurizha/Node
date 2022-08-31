@@ -31,7 +31,7 @@ source $HOME/.cargo/env
 GCC
 ```
 sudo apt update -y
-sudo apt install git build-essential ufw curl jq snapd --y
+sudo apt install git build-essential ufw curl jq snapd -y
 ```
 
 Libusb
