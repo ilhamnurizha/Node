@@ -150,3 +150,15 @@ sudo systemctl enable tmkms
 sudo systemctl restart tmkms && sudo journalctl -u tmkms -f -o cat
 ```
 Congrats, You should now be signing blocks! If you cancel the TMKMS process, you will no longer sign blocks and will stop syncing. If you restart the TMKMS process, your validator node will continue to sync from where it left off.
+
+## How To Check Result
+
+Check on Your Node Validator Server, if that showing  your Address and Pubkey that Successfully
+```
+haqqd status 2>&1 | jq .ValidatorInfo
+```
+
+Check On Tendermint KMS Server, find and search this "state connected to validator successfully" after you start kms services
+```
+journalctl -u tmkms -f -o cat
+```
