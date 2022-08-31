@@ -222,7 +222,7 @@ haqqd tx staking create-validator \
 
 ## Self Delegated or to Other Validator
 ```
-haqqd tx staking delegate YOUR_VALOPER_ADDRESS 10000000aISLM --from=$WALLET --chain-id $HAQQ_CHAIN_ID --gas-prices=0.025aISLM
+haqqd tx staking delegate VALOPER_ADDRESS 10000000aISLM --from=$WALLET --chain-id $HAQQ_CHAIN_ID --gas-prices=0.025aISLM
 ```
 
 ## Check Active Validator
