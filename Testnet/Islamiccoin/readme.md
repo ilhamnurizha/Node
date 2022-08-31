@@ -231,7 +231,7 @@ haqqd tx staking delegate YOUR_VALOPER_ADDRESS 10000000aISLM --from=$WALLET --ch
 haqqd query tendermint-validator-set | grep "$(haqqd tendermint show-address)"
 ```
 
-## Check Active Validator
+## Check Inactive Validator
 
 ```
 haqqd q staking validators -oj --limit=3000 | jq '.validators[] | select(.status=="BOND_STATUS_UNBONDED")' | jq -r '(.tokens|tonumber/pow(10; 6)|floor|tostring) + " \t " + .description.moniker' | sort -gr | nl
