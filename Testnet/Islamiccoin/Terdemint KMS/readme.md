@@ -64,7 +64,7 @@ rsync -Pavz root@(your_node_ip):~/.haqqd/config/priv_validator_key.json ~/tmkms/
 tmkms softsign import $HOME/tmkms/config/secrets/priv_validator_key.json $HOME/tmkms/config/secrets/priv_validator_key
 ```
 
-## Config tmkms
+## Config tmkms to Haqq Testnet Chain ID
 ```
 nano $HOME/tmkms/config/tmkms.toml
 ```
@@ -93,9 +93,60 @@ path = "/root/tmkms/config/secrets/priv_validator_key"
 
 [[validator]]
 chain_id = "haqq_53211-1"
-addr = "tcp://123.456.32.123:688" # your validator node ip and port
+addr = "tcp://(your_node_ip):688" # your validator node ip and port
 secret_key = "/root/tmkms/config/secrets/secret_connection_key"
 protocol_version = "v0.34"
 reconnect = true
 ```
 
+## Create Service for TMKMS
+```
+sudo tee /etc/systemd/system/tmkms.service > /dev/null <<EOF
+[Unit]
+Description=tmkms
+After=network-online.target
+
+[Service]
+User=$USER
+ExecStart=$(which tmkms) start $HOME/tmkms/config/tmkms.toml
+Restart=on-failure
+RestartSec=3
+LimitNOFILE=65535
+
+[Install]
+WantedBy=multi-user.target
+EOF
+```
+
+## Access and Modify Your Config Node and Validator
+
+```
+nano $HOME/.haqqd/config/config.toml
+```
+
+Add into config.toml
+```
+priv_validator_laddr = "tcp://0.0.0.0:688"
+```
+
+Comment or remark this 
+```
+# Path to the JSON file containing the private key to use as a validator in the consensus protocol
+# priv_validator_key_file = "config/priv_validator_key.json"
+
+# Path to the JSON file containing the last sign state of a validator
+# priv_validator_state_file = "data/priv_validator_state.json"
+```
+
+Restart Haqqd Services
+```
+systemctl restart haqqd && sudo journalctl -u haqqd -f -o cat
+```
+
+Go back to your KMS Server and start tmkms service
+```
+sudo systemctl daemon-reload
+sudo systemctl enable tmkms
+sudo systemctl restart tmkms && sudo journalctl -u tmkms -f -o cat
+```
+Congrats, You should now be signing blocks! If you cancel the TMKMS process, you will no longer sign blocks and will stop syncing. If you restart the TMKMS process, your validator node will continue to sync from where it left off.
