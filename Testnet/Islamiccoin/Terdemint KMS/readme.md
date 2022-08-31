@@ -1,4 +1,4 @@
-# [Islamiccoin](https://docs.haqq.network/guides/kms/kms.html) Create High Availability with Tendermint KMS
+# [Islamiccoin](https://docs.haqq.network/guides/kms/kms.html) Create Validator High Availability with Tendermint KMS
 
 [Terndermint KMS](https://github.com/iqlusioninc/tmkms#about) is Key Management System for Tendermint applications such as Cosmos Validators.
 This repository contains tmkms, a key management service intended to be deployed in conjunction with Tendermint applications (ideally on separate physical hosts) which provides the following:
